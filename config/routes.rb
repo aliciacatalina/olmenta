@@ -1,10 +1,17 @@
 Olmenta::Application.routes.draw do
+<<<<<<< HEAD
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('books#index'), via: [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
   root to: 'books#index'
+=======
+  resources :categorizations
+
+  resources :genres
+
+>>>>>>> 4bc0b79... Adds genres and categorization resources
   resources :books
 
   devise_for :users

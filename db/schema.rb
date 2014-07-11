@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140710200409) do
+=======
+ActiveRecord::Schema.define(version: 20140711015435) do
+>>>>>>> 4bc0b79... Adds genres and categorization resources
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +29,16 @@ ActiveRecord::Schema.define(version: 20140710200409) do
     t.text     "description"
   end
 
+  create_table "categorizations", force: true do |t|
+    t.integer  "genre_id"
+    t.integer  "book_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categorizations", ["book_id"], name: "index_categorizations_on_book_id", using: :btree
+  add_index "categorizations", ["genre_id"], name: "index_categorizations_on_genre_id", using: :btree
+
   create_table "collections", force: true do |t|
     t.integer  "user_id"
     t.integer  "book_id"
@@ -35,12 +49,17 @@ ActiveRecord::Schema.define(version: 20140710200409) do
   add_index "collections", ["book_id"], name: "index_collections_on_book_id", using: :btree
   add_index "collections", ["user_id"], name: "index_collections_on_user_id", using: :btree
 
+<<<<<<< HEAD
   create_table "user2s", force: true do |t|
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+=======
+  create_table "genres", force: true do |t|
+    t.string   "name"
+>>>>>>> 4bc0b79... Adds genres and categorization resources
     t.datetime "created_at"
     t.datetime "updated_at"
   end
