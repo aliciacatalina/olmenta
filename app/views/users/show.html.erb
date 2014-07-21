@@ -1,0 +1,9 @@
+<h1><%= @user.email %></h1>
+<h4>Books you own</h4>
+<% @books.each do |book| %>
+  <%= render 'books/book', book: book %>
+<% end %>
+<h4>Books you want</h4>
+<% @wanted_books.each do |wanted_book| %>
+  <%= render 'books/book', book: wanted_book %>
+<% end %>
