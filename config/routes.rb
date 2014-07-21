@@ -1,20 +1,20 @@
 Olmenta::Application.routes.draw do
-<<<<<<< HEAD
+
+  resources :wanted_books
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('books#index'), via: [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
   root to: 'books#index'
-=======
   resources :categorizations
 
   resources :genres
 
->>>>>>> 4bc0b79... Adds genres and categorization resources
   resources :books
-
   devise_for :users
+  resources :users, only: [:index, :new, :create, :show, :destroy, :edit, :update] 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
