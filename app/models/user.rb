@@ -43,5 +43,7 @@ end
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :collections
+  has_many :wanteds
   has_many :books, through: :collections
+  has_many :wanted_books, through: :collections
 end
