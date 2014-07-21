@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140807215039) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20140719213424) do
+=======
+ActiveRecord::Schema.define(version: 20140711152033) do
+>>>>>>> e5dc53c... adds facebook authentication corrected
+>>>>>>> 8791d34... adds facebook authentication corrected
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +59,23 @@ ActiveRecord::Schema.define(version: 20140807215039) do
   add_index "collections", ["user_id"], name: "index_collections_on_user_id", using: :btree
   add_index "collections", ["wanted_book_id"], name: "index_collections_on_wanted_book_id", using: :btree
 
+<<<<<<< HEAD
   create_table "genres", force: true do |t|
+=======
+  create_table "indentities", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "indentities", ["user_id"], name: "index_indentities_on_user_id", using: :btree
+
+  create_table "user2s", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+>>>>>>> e5dc53c... adds facebook authentication corrected
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -76,6 +100,7 @@ ActiveRecord::Schema.define(version: 20140807215039) do
     t.string   "name"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.string   "name2"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

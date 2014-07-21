@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Olmenta::Application.config.secret_key_base = '0da6f7b6cb970767d5ce10439cd5a344db60f2bba1ea315e8f05d008705bec8fcff280284832f6fbcd0c86eecc18da9175d0ba961f1a78ceae502d0896d4a6e1'
+Olmenta::Application.config.secret_key_base = 'a696e0264ba7b9ce9ba7af35b51d7cb65ab7900b7eb7065ae8946340ccc8528e453a6bc22a43503e2de76baf27df8d077ac47e3f6ac1c2a32e24c5b0206964db'

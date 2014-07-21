@@ -1,3 +1,3 @@
 # Be sure to restart your server when you modify this file.
 
-Olmenta::Application.config.session_store :cookie_store, key: '_Olmenta_session'
+Olmenta::Application.config.session_store :cookie_store, key: '_olmenta_session'
