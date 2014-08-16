@@ -47,6 +47,8 @@ end
 
 gem "figaro"
 gem "unicorn"
+gem "paperclip", "~> 4.1"
+
 group :test do
   gem "cucumber-rails", require: false
   gem "database_cleaner"
