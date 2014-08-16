@@ -1,25 +1,67 @@
 <!DOCTYPE html>
 <html>
-<head>
- <title>Olmenta</title>
- <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
- <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
- <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+ 		<title>Olmenta</title>
+  		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+      <link href='http://fonts.googleapis.com/css?family=Iceberg' rel='stylesheet' type='text/css'>
+ 		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+ 		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+ 		<%= csrf_meta_tags %>
+	</head>
+	<body>
+   			<nav class='navigation-bar fixed'>
+          <ul class="brand-section">
+            <li class="with-dropdown">
+              <a href="#"><i class="fa fa-bars"></i></a>
+          <ul class="dropdown">
+            <li class="dropdown-header">Genres</li>
+            <li><a href="#">Fiction</a></li>
+            <li><a href="#">Biography</a></li>
+            <li><a href="#">Childrens</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">Art</a></li>
+        </ul>
+          </li>
+          <li class="brand-name">
+              <a href="/" class="menu-trigger" id="trigger">Olmenta</a>
+            </li>
+            <li class="menu-toggle">
+            <a href="#">Menu</a>
+            </li>
+        </ul>
+          <% if user_signed_in? %>
+          <ul class="pull-right">
+            <li class="with-form">
+              <form action="" method="get" accept-charset="utf-8">
+              <input type="search" name="" id="" value="" /><i class="fa fa-search fa-inverse"></i>
+              </form>
+            </li>
+          </ul>
+          <% end %>
+          <ul class="pull-right">
+          <li class="with-dropdown">                   
+       			  <% if user_signed_in? %>
+         			  <a href="#"><%= current_user.name %><i class="fa fa-caret-down"></i></a>
+                <ul class="dropdown"
+                	<li><%= link_to "Profile", user_path(current_user)%></li>
+                  <li class="divider"></li>
+         			  <li><%= link_to "Sign out", destroy_user_session_path, method: 'delete' %></li>
+              </ul>
+            </li>
+       			  <% else %>
+         			  <li><%= link_to "Sign up", new_user_registration_path %></li>
+                <li class="divider"></li>
+                <li class="login"><%= link_to "Log in", new_user_session_path %></li>
+          </ul>
+       			  <% end %>
+     		</nav>
+    <div class="container content">
 
-<div id="container">
-   <div id="user_nav">
-       <% if user_signed_in? %>
-         Signed in as <%= current_user.name %>. Not you?
-         <%= link_to "Sign out", destroy_user_session_path %>
-       <% else %>
-         <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-       <% end %>
-       <%= link_to "Profile", user_path(current_user)%>
-     </div>
-
-<%= yield %>
-
-</body>
+		<%= yield %>
+  </div>
+  		<%= javascript_include_tag "application" %>
+	</body>
 </html>

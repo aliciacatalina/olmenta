@@ -47,7 +47,11 @@ end
 
 gem "figaro"
 gem "unicorn"
+<<<<<<< HEAD
 gem "paperclip", "~> 4.1"
+=======
+gem 'furatto'
+>>>>>>> 4fd1fd1... Styled Nav Bar
 
 group :test do
   gem "cucumber-rails", require: false
@@ -73,8 +77,13 @@ group :development do
   gem "binding_of_caller"
 end
 
+gem 'compass-rails', '~> 1.1.3'
+
+
 gem "devise"
 
 gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
+
+gem 'font-awesome-sass'
 

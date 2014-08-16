@@ -12,6 +12,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140807215039) do
 =======
 <<<<<<< HEAD
@@ -20,6 +21,9 @@ ActiveRecord::Schema.define(version: 20140719213424) do
 ActiveRecord::Schema.define(version: 20140711152033) do
 >>>>>>> e5dc53c... adds facebook authentication corrected
 >>>>>>> 8791d34... adds facebook authentication corrected
+=======
+ActiveRecord::Schema.define(version: 20140719213424) do
+>>>>>>> 4fd1fd1... Styled Nav Bar
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,9 +63,12 @@ ActiveRecord::Schema.define(version: 20140711152033) do
   add_index "collections", ["user_id"], name: "index_collections_on_user_id", using: :btree
   add_index "collections", ["wanted_book_id"], name: "index_collections_on_wanted_book_id", using: :btree
 
-<<<<<<< HEAD
   create_table "genres", force: true do |t|
-=======
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "indentities", force: true do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -75,8 +82,9 @@ ActiveRecord::Schema.define(version: 20140711152033) do
   create_table "user2s", force: true do |t|
     t.string   "provider"
     t.string   "uid"
->>>>>>> e5dc53c... adds facebook authentication corrected
     t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -113,15 +121,5 @@ ActiveRecord::Schema.define(version: 20140711152033) do
   end
 
   add_index "wanted_books", ["book_id"], name: "index_wanted_books_on_book_id", using: :btree
-
-  create_table "wanteds", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "book_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "wanteds", ["book_id"], name: "index_wanteds_on_book_id", using: :btree
-  add_index "wanteds", ["user_id"], name: "index_wanteds_on_user_id", using: :btree
 
 end

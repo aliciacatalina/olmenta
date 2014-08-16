@@ -1,11 +1,17 @@
 class User < ActiveRecord::Base
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  has_many :collections
+  has_many :wanteds
+  has_many :books, through: :collections
+  has_many :wanted_books, through: :collections
+  
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable
-  devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+ 
 
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
@@ -23,12 +29,7 @@ class User < ActiveRecord::Base
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-  has_many :collections
-  has_many :wanteds
-  has_many :books, through: :collections
-  has_many :wanted_books, through: :collections
+
 
     # Create the user if needed
     if user.nil?
