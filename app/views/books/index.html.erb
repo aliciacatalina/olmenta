@@ -2,8 +2,8 @@
 		<div class="row">
       <% group.each_with_index do |book, index|%>
 			  <div class="book col-2">
-          <%= link_to image_tag(book.cover), "#modal_#{index}", data: { furatto: 'modal', target: "#modal_#{index}", transition: "1", theme:"alpha"} %>
-          <div class="modal" id="modal_<%= index %>">
+          <%= link_to image_tag(book.cover), "#modal_#{book.id}", data: { furatto: 'modal', target: "#modal_#{book.id}", transition: "1", theme:"alpha"} %>
+          <div class="modal" id="modal_<%= book.id %>">
             <div class="modal-content">
               <%= render partial: 'show', locals: { book: book } %>
             </div>
