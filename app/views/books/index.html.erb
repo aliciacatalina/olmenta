@@ -1,17 +1,17 @@
-<% @books.each_with_index do |book, index| %>
-	<% if index%4 == 0 %>
+<% @books.in_groups_of(6, false).each do |group| %>
 		<div class="row">
-			<div class="book col-2">
-  			<%= link_to image_tag(book.cover), book %>
-  			<%= render partial: 'show', locals: { book: book} %>
-  		</div>
-	<% else %>
- 			<div class="book col-2">
-  			<%= link_to image_tag(book.cover), book %>
-  			<%= render partial: 'show', locals: { book: book} %>
+      <% group.each_with_index do |book, index|%>
+			  <div class="book col-2">
+          <%= link_to image_tag(book.cover), "#modal_#{index}", data: { furatto: 'modal', target: "#modal_#{index}", transition: "1", theme:"alpha"} %>
+          <div class="modal" id="modal_<%= index %>">
+            <div class="modal-content">
+              <%= render partial: 'show', locals: { book: book } %>
+            </div>
+          </div>
+        </div>
+      <% end%>
 		</div>
 	<% end %>
-<% end %>
 <a class="button primary large" data-furatto="modal" data-target="#modal-1" data-transition="1" data-theme="alpha">Launch modal</a>
 <div class="modal" id="modal-1">
   <div class="modal-header">
