@@ -11,19 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140807215039) do
-=======
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140719213424) do
-=======
-ActiveRecord::Schema.define(version: 20140711152033) do
->>>>>>> e5dc53c... adds facebook authentication corrected
->>>>>>> 8791d34... adds facebook authentication corrected
-=======
-ActiveRecord::Schema.define(version: 20140719213424) do
->>>>>>> 4fd1fd1... Styled Nav Bar
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"

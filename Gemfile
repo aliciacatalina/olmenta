@@ -47,11 +47,8 @@ end
 
 gem "figaro"
 gem "unicorn"
-<<<<<<< HEAD
 gem "paperclip", "~> 4.1"
-=======
 gem 'furatto'
->>>>>>> 4fd1fd1... Styled Nav Bar
 
 group :test do
   gem "cucumber-rails", require: false
@@ -86,4 +83,6 @@ gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 
 gem 'font-awesome-sass'
+
+gem 'rmagick', '~> 2.13.3'
 

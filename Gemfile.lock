@@ -42,14 +42,11 @@ GEM
       xpath (~> 2.0)
     childprocess (0.5.3)
       ffi (~> 1.0, >= 1.0.11)
-<<<<<<< HEAD
+    chunky_png (1.3.1)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.4)
       climate_control (>= 0.0.3, < 1.0)
-=======
-    chunky_png (1.3.1)
->>>>>>> 4fd1fd1... Styled Nav Bar
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -191,6 +188,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    rmagick (2.13.3)
     rspec-core (3.0.2)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.2)
@@ -281,6 +279,7 @@ DEPENDENCIES
   pg
   rails (= 4.0.3)
   rails_12factor
+  rmagick (~> 2.13.3)
   rspec-rails
   sass-rails (~> 4.0.0)
   sdoc
